@@ -19,8 +19,8 @@ public class GSModel {
     public static final int EMU2= 6;
     public static final int EMU3= 7;
 
-    public static final File boosterSimFile = new File("/Users/sjd227/Documents/6th Semester/Rocketry/Sim_feb20_booster.xls");
-    public static final File susSimFile = new File("/Users/sjd227/Documents/6th Semester/Rocketry/Sim_feb20.xls");
+    public static final File boosterSimFile = new File("SimData/Sim_feb20_booster.xls");
+    public static final File susSimFile = new File("SimData/Sim_feb20.xls");
 
     /*
     public static GPSObject boosterSim=

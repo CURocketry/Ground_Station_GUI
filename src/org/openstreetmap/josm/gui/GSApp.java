@@ -72,11 +72,12 @@ public class GSApp implements ActionListener, ItemListener{
 
         if (cmd.equals(BUTTON_SEPTEST)){
             if (!GSModel.isSim || osmReady()){
+                view.launch.rSectionsApplet.testSep();
                 /*
                 String data= "<Z 100026000V200300X 54.1111-70.2222-80.9999Y 10.1234 50.4321-80.8888S10000000C0C21,21,17,16C24,22,21,22,21,22,24,22,25,19,18,20,23,24C45C36,38,37,38,40,42,44,45,43,41,35,34,36,35,34,33,32,33,36,35,35C30,31,31,29,30,29,28,29C12C7,8,3,1,0,5C15,15,14,14C8,8,4,4C2,1C12,12,11,11C0C45R0R0,1,1,0R0,3,6,7,8,9,12,16,18,19,19,10,2,0R0R1,4,5,14,17,18,19,20,20,19,18,17,16,15,13,12,11,10,5,4,1R4,13,14,14,10,9,6,4R5R7,8,10,10,8,7R10,16,16,10R15,16,16,15R17,17R17,18,18,17R23R23A400,4400,32000,400,-31536,10000,400,9200,5600,4000,800,1600,400,400D1,1,1,1,1,1,1,1,1,1,1,1,1,1W0,4,30,0,32,9,0,8,5,3,0,1,0,0>";
                 parseXBeeData(data);
                 */
-                xbeeThread.send("get;");
+                //xbeeThread.send("get;");
             }
 
         }else if (cmd.equals(BUTTON_OPENHZRD)){
@@ -257,9 +258,9 @@ public class GSApp implements ActionListener, ItemListener{
         view.launch.rSectionsApplet.drawSeparated(model.getSeparated());
         updateTrajectory();
         updateOSM();
-        //if (model.newHzrdsReceived){
+        if (model.newHzrdsReceived){
             updateHazards();
-        //}
+        }
 
     }
 

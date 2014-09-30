@@ -37,14 +37,16 @@ public class XBeeThread extends Thread {
         this.controller= controller;
         this.gpsObjects= gpsObjects;
 
-        PropertyConfigurator.configure("log4j.properties");
-        xbee = new XBee();
-        try {
-            xbee.open("/dev/tty.usbserial-AD025FLG", 9600);
-            addr64 = new XBeeAddress64(0, 0x13, 0xa2, 0, 0x40, 0x91, 0x79, 0xa7);
-        } catch (XBeeException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+        if (!GSModel.isSim){
+            PropertyConfigurator.configure("log4j.properties");
+            xbee = new XBee();
+            try {
+                xbee.open("/dev/tty.usbserial-AD025FLG", 9600);
+                addr64 = new XBeeAddress64(0, 0x13, 0xa2, 0, 0x40, 0x91, 0x79, 0xa7);
+            } catch (XBeeException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         }
 
     }
